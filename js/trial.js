@@ -41,7 +41,17 @@ var charCounter={
 
 function multiplier(val,secondVal){
     if(val===null || !val || secondVal===null || !secondVal) return console.log('please provide a number');
-    return Math.pow(parseInt(val),parseInt(secondVal)) ;
+    var tempVal = val;
+    if (secondVal ===0) {
+        tempVal = tempVal*1;
+    }else{
+        for(m=1; m<secondVal;m++){
+            tempVal = tempVal * val;
+        }
+    }
+
+    return tempVal;
+    // return Math.pow(parseInt(val),parseInt(secondVal)) ;
 }
 
 function anagramChecker(arrString, secondArrString) {
